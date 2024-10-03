@@ -10,7 +10,7 @@
 2. **Navigate to the Project Directory:**
    - Change your directory to the project folder:
      ```bash
-     cd ~/GitHub/Intelligent-robot-design/Evolutionary_algorithm
+     cd Intelligent-robot-design/Evolutionary_algorithm
      ```
 
 3. **Execute the Evolutionary Algorithm:**
