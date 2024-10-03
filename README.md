@@ -1,3 +1,13 @@
+## Description of the Evolutionary Algorithm
+In this project, the evolutionary algorithm is used to optimize quadruped parameters. By simulating the principles of natural selection, mutation, and competition, it evolves a population of robots over successive generations, refining their structures based on defined fitness criteria.
+
+**Features**
+Population Management: Handles a dynamic population of robots, tracking their fitness and facilitating generational evolution.
+Mutation Operations: Implements some potential mutation strategies, including mass, size, and joint parameter mutations to introduce variability.
+Selection Strategy: Utilizes tournament selection to choose the fittest robots for reproduction, ensuring the propagation of superior traits.
+Elitism: Preserves a fraction of the top-performing robots in each generation to maintain high-quality individuals.
+Configurable Parameters: Adjustable mutation rates, elite fractions, tournament sizes, and mutation ranges through a configuration file.
+
 ## Walkthrough: How to Execute the Conversion Process
 
 1. **Activate the Conda Environment:**
