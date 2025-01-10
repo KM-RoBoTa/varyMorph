@@ -1,0 +1,24 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: varyMorph
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - {}
+  - name: KM-RoBoTa
+    address: Chemin de la Roche 1
+    city: Renens
+    country: CH
+    post-code: '1020'
+    website: 'https://km-robota.com'
+    email: info@km-robota.com
+repository-code: 'https://github.com/KM-RoBoTa/varyMorph'
+keywords:
+  - URDF
+  - USDA
+  - Robot Morphology
+license: MIT
