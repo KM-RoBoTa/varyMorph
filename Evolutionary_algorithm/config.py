@@ -2,24 +2,27 @@
 # Evolution Options
 # --------------------------------------------------------------------------- #
 
+FILE_TYPE = "USD"
 
 # Population size
-POPULATION_SIZE = 50
+POPULATION_SIZE = 10
 
-# Number of generations to evolve
-NUM_GENERATIONS = 2
+# Mode for dimensions of legs
+LEG_DIMENSION_MODE = "random"  # or "symmetrical" or "bilateral"
 
 # Resizing factor
 RES_FACTOR = 1
 
-SIZE_RANGE_LENGTH = [0.8*RES_FACTOR, 1.2*RES_FACTOR]
-SIZE_RANGE_WIDTH = [0.4*RES_FACTOR, 0.6*RES_FACTOR]
-SIZE_RANGE_HEIGHT = [0.15*RES_FACTOR, 0.3*RES_FACTOR]
-HEIGHT_RANGE = [0.3*RES_FACTOR, 0.6*RES_FACTOR]
-MASS_RANGE = [0.5*(RES_FACTOR)**3, 2*(RES_FACTOR)**3]
-RADIUS_RANGE = [0.08*RES_FACTOR, 0.11*RES_FACTOR]
-JOINT_POS_RANGE = [[-0.02, -0.02, -0.02], [0.02, 0.02, 0.02]]
-FOOT_SPHERE_RADIUS = 0.2*RES_FACTOR
+# Size Ranges
+SIZE_RANGE_LENGTH = RES_FACTOR * [0.8, 1.5]
+SIZE_RANGE_WIDTH = RES_FACTOR * [0.4, 0.8]
+SIZE_RANGE_HEIGHT = RES_FACTOR * [0.15, 0.3]
+
+# Other Ranges
+HEIGHT_RANGE = RES_FACTOR * [0.25, 0.9]
+MASS_RANGE = [(0.5 * RES_FACTOR ** 3), (2 * RES_FACTOR ** 3)]  # Scaled by RES_FACTOR³
+RADIUS_RANGE = RES_FACTOR * [0.08, 0.11]
+
 ELITE_FRACTION = 0.2
 
 # type of morphology: quadruped, arbitrary

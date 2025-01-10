@@ -1,7 +1,8 @@
 import random
 import json
 import os
-from robot import Robot
+# from robot import Robot
+from robot_param import Robot
 import config
 from Evolutionary_algorithm.urdf_generator import URDFCreator
 from new_link import BoxLink, SphereLink, CylinderLink
@@ -31,7 +32,8 @@ class Population:
                 name = f"robot_{i+1}"
                 # Creating a robot
                 robot = Robot(morphology="quadruped")
-                robot.initialize_fixed_morphology()
+                # robot.initialize_fixed_morphology()
+                robot.initialize_parametrized_morphology()
                 self.robots[name] = robot
 
     def save_generation(self, generation):
@@ -94,8 +96,8 @@ if __name__ == "__main__":
     population = Population(config.POPULATION_SIZE, ['mass', 'size', 'com'], output_dir='generations')
     population.initialize_population()
 
-    for generation in range(config.NUM_GENERATIONS):
-        population.save_generation(generation + 1)
+    # for generation in range(config.NUM_GENERATIONS):
+    #     population.save_generation(generation + 1)
     
     # for generation in range(config.NUM_GENERATIONS):
     #     print(population.robots['robot_1'].links)

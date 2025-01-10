@@ -9,7 +9,7 @@
         }
     }
     defaultPrim = "quadruped_robot"
-    doc = """Generated from Composed Stage of root layer /home/gpuuser/GitHub/Intelligent-robot-design/generations/generation_0/robot_9.usda
+    doc = """Generated from Composed Stage of root layer /home/gpuuser/GitHub/varyMorph/generations/generation_0/robot_9.usda
 """
     metersPerUnit = 1
     upAxis = "Z"
@@ -30,10 +30,8 @@ def Xform "quadruped_robot"
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsArticulationRootAPI", "PhysxArticulationAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.006177288)
-        float3 physics:diagonalInertia = (0.000022700047, 0.000022700047, 0.000015732527)
-        float physics:mass = 0.9439516
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.0036508592)
+        float physics:mass = 0.7501374
         bool physxArticulation:enabledSelfCollisions = 1
         int physxArticulation:solverPositionIterationCount = 32
         int physxArticulation:solverVelocityIterationCount = 1
@@ -82,10 +80,8 @@ def Xform "quadruped_robot"
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.10709273)
-        float3 physics:diagonalInertia = (0.040279154, 0.040279154, 0.18333453)
-        float physics:mass = 1.5375816
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.0024839835)
+        float physics:mass = 0.85433424
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
         double3 xformOp:translate = (0, 0, 0)
@@ -93,10 +89,10 @@ def Xform "quadruped_robot"
 
         def Cube "visuals"
         {
-            float3[] extent = [(-0.5432894, -0.25008705, -0.076545484), (0.5432894, 0.25008705, 0.076545484)]
+            float3[] extent = [(-0.6666194, -0.29261744, -0.080285124), (0.6666194, 0.29261744, 0.080285124)]
             double size = 1
             quatd xformOp:orient = (1, 0, 0, 0)
-            double3 xformOp:scale = (1.0865788459777832, 0.5001741051673889, 0.1530909687280655)
+            double3 xformOp:scale = (1.3332388401031494, 0.5852348804473877, 0.16057024896144867)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
@@ -105,16 +101,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.5432894, -0.25008705, -0.076545484), (0.5432894, 0.25008705, 0.076545484)]
+            float3[] extent = [(-0.6666194, -0.29261744, -0.080285124), (0.6666194, 0.29261744, 0.080285124)]
             uniform token purpose = "guide"
             double size = 1
             quatd xformOp:orient = (1, 0, 0, 0)
-            double3 xformOp:scale = (1.0865788459777832, 0.5001741051673889, 0.1530909687280655)
+            double3 xformOp:scale = (1.3332388401031494, 0.5852348804473877, 0.16057024896144867)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "FL_hip_joint" (
+        def PhysicsRevoluteJoint "leg_0_hip_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -124,10 +120,10 @@ def Xform "quadruped_robot"
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "X"
             rel physics:body0 = </quadruped_robot/trunk>
-            rel physics:body1 = </quadruped_robot/FL_hip>
+            rel physics:body1 = </quadruped_robot/leg_0_hip>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0.5432894, 0.25008705, -0.061236385)
+            point3f physics:localPos0 = (0.6666194, -0.29261744, -0.0642281)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -136,7 +132,7 @@ def Xform "quadruped_robot"
             float physxJoint:maxJointVelocity = 3002.2988
         }
 
-        def PhysicsRevoluteJoint "FR_hip_joint" (
+        def PhysicsRevoluteJoint "leg_1_hip_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -146,10 +142,10 @@ def Xform "quadruped_robot"
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "X"
             rel physics:body0 = </quadruped_robot/trunk>
-            rel physics:body1 = </quadruped_robot/FR_hip>
+            rel physics:body1 = </quadruped_robot/leg_1_hip>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0.5432894, -0.25008705, -0.061236385)
+            point3f physics:localPos0 = (0.6666194, 0.29261744, -0.0642281)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -158,7 +154,7 @@ def Xform "quadruped_robot"
             float physxJoint:maxJointVelocity = 3002.2988
         }
 
-        def PhysicsRevoluteJoint "RL_hip_joint" (
+        def PhysicsRevoluteJoint "leg_2_hip_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -168,10 +164,10 @@ def Xform "quadruped_robot"
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "X"
             rel physics:body0 = </quadruped_robot/trunk>
-            rel physics:body1 = </quadruped_robot/RL_hip>
+            rel physics:body1 = </quadruped_robot/leg_2_hip>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (-0.5432894, 0.25008705, -0.061236385)
+            point3f physics:localPos0 = (0, -0.29261744, -0.0642281)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -180,7 +176,7 @@ def Xform "quadruped_robot"
             float physxJoint:maxJointVelocity = 3002.2988
         }
 
-        def PhysicsRevoluteJoint "RR_hip_joint" (
+        def PhysicsRevoluteJoint "leg_3_hip_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -190,10 +186,54 @@ def Xform "quadruped_robot"
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "X"
             rel physics:body0 = </quadruped_robot/trunk>
-            rel physics:body1 = </quadruped_robot/RR_hip>
+            rel physics:body1 = </quadruped_robot/leg_3_hip>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (-0.5432894, -0.25008705, -0.061236385)
+            point3f physics:localPos0 = (0, 0.29261744, -0.0642281)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 3002.2988
+        }
+
+        def PhysicsRevoluteJoint "leg_4_hip_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 60
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </quadruped_robot/trunk>
+            rel physics:body1 = </quadruped_robot/leg_4_hip>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-0.6666194, -0.29261744, -0.0642281)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 3002.2988
+        }
+
+        def PhysicsRevoluteJoint "leg_5_hip_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 60
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "X"
+            rel physics:body0 = </quadruped_robot/trunk>
+            rel physics:body1 = </quadruped_robot/leg_5_hip>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (-0.6666194, 0.29261744, -0.0642281)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
@@ -203,23 +243,21 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "FL_hip" (
+    def Xform "leg_0_hip" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.10723816)
-        float3 physics:diagonalInertia = (0.0069697397, 0.0069697397, 0.0069697397)
-        float physics:mass = 1.5151578
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.09250082)
+        float physics:mass = 1.1312667
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, 0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0.6666194200515747, -0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
-            double radius = 0.10723815858364105
+            float3[] extent = [(-0.09250082, -0.09250082, -0.09250082), (0.09250082, 0.09250082, 0.09250082)]
+            double radius = 0.09250082075595856
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -230,16 +268,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
+            float3[] extent = [(-0.09250082, -0.09250082, -0.09250082), (0.09250082, 0.09250082, 0.09250082)]
             uniform token purpose = "guide"
-            double radius = 0.10723815858364105
+            double radius = 0.09250082075595856
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "FL_thigh_joint" (
+        def PhysicsRevoluteJoint "leg_0_thigh_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -248,8 +286,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/FL_hip>
-            rel physics:body1 = </quadruped_robot/FL_thigh>
+            rel physics:body0 = </quadruped_robot/leg_0_hip>
+            rel physics:body1 = </quadruped_robot/leg_0_thigh>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -262,28 +300,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "FL_thigh" (
+    def Xform "leg_0_thigh" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.065556616)
-        float3 physics:diagonalInertia = (0.014074903, 0.014074903, 0.009530239)
-        float physics:mass = 1.6574297
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.059338883)
+        float physics:mass = 1.2518783
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, 0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0.6666194200515747, -0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.10723816, -0.10723816, -0.16130081), (0.10723816, 0.10723816, 0.16130081)]
-            double height = 0.3226016163825989
-            double radius = 0.10723815858364105
+            float3[] extent = [(-0.09250082, -0.09250082, -0.1363874), (0.09250082, 0.09250082, 0.1363874)]
+            double height = 0.2727747857570648
+            double radius = 0.09250082075595856
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16130080819129944)
+            double3 xformOp:translate = (0, 0, -0.1363873928785324)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -292,46 +328,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.10723816, -0.10723816, -0.16130081), (0.10723816, 0.10723816, 0.16130081)]
-            double height = 0.3226016163825989
+            float3[] extent = [(-0.09250082, -0.09250082, -0.1363874), (0.09250082, 0.09250082, 0.1363874)]
+            double height = 0.2727747857570648
             uniform token purpose = "guide"
-            double radius = 0.10723815858364105
+            double radius = 0.09250082075595856
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16130080819129944)
+            double3 xformOp:translate = (0, 0, -0.1363873928785324)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "FL_knee_joint"
+        def PhysicsFixedJoint "leg_0_knee_joint"
         {
-            rel physics:body0 = </quadruped_robot/FL_thigh>
-            rel physics:body1 = </quadruped_robot/FL_knee>
+            rel physics:body0 = </quadruped_robot/leg_0_thigh>
+            rel physics:body1 = </quadruped_robot/leg_0_knee>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.32260162)
+            point3f physics:localPos0 = (0, 0, -0.2727748)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "FL_knee" (
+    def Xform "leg_0_knee" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.10723816)
-        float3 physics:diagonalInertia = (0.0033021178, 0.0033021178, 0.0033021178)
-        float physics:mass = 0.7178503
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.09606382)
+        float physics:mass = 0.89785117
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, 0.25008705258369446, -0.3838379979133606)
+        double3 xformOp:translate = (0.6666194200515747, -0.29261744022369385, -0.33700287342071533)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
-            double radius = 0.10723815858364105
+            float3[] extent = [(-0.09606382, -0.09606382, -0.09606382), (0.09606382, 0.09606382, 0.09606382)]
+            double radius = 0.09606382250785828
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -342,16 +376,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
+            float3[] extent = [(-0.09606382, -0.09606382, -0.09606382), (0.09606382, 0.09606382, 0.09606382)]
             uniform token purpose = "guide"
-            double radius = 0.10723815858364105
+            double radius = 0.09606382250785828
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "FL_calf_joint" (
+        def PhysicsRevoluteJoint "leg_0_calf_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -360,8 +394,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/FL_knee>
-            rel physics:body1 = </quadruped_robot/FL_calf>
+            rel physics:body0 = </quadruped_robot/leg_0_knee>
+            rel physics:body1 = </quadruped_robot/leg_0_calf>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -374,28 +408,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "FL_calf" (
+    def Xform "leg_0_calf" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.04310225)
-        float3 physics:diagonalInertia = (0.012458902, 0.012458902, 0.005145147)
-        float physics:mass = 1.509096
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.52774966)
+        float physics:mass = 0.6957299
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, 0.25008705258369446, -0.3838379979133606)
+        double3 xformOp:translate = (0.6666194200515747, -0.29261744022369385, -0.33700287342071533)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.082576305, -0.082576305, -0.24953783), (0.082576305, 0.082576305, 0.24953783)]
-            double height = 0.49907565116882324
-            double radius = 0.08257630467414856
+            float3[] extent = [(-0.09606382, -0.09606382, -0.44419062), (0.09606382, 0.09606382, 0.44419062)]
+            double height = 0.8883812427520752
+            double radius = 0.09606382250785828
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24953782558441162)
+            double3 xformOp:translate = (0, 0, -0.4441906213760376)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -404,46 +436,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.082576305, -0.082576305, -0.24953783), (0.082576305, 0.082576305, 0.24953783)]
-            double height = 0.49907565116882324
+            float3[] extent = [(-0.09606382, -0.09606382, -0.44419062), (0.09606382, 0.09606382, 0.44419062)]
+            double height = 0.8883812427520752
             uniform token purpose = "guide"
-            double radius = 0.08257630467414856
+            double radius = 0.09606382250785828
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24953782558441162)
+            double3 xformOp:translate = (0, 0, -0.4441906213760376)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "FL_foot_joint"
+        def PhysicsFixedJoint "leg_0_foot_joint"
         {
-            rel physics:body0 = </quadruped_robot/FL_calf>
-            rel physics:body1 = </quadruped_robot/FL_foot>
+            rel physics:body0 = </quadruped_robot/leg_0_calf>
+            rel physics:body1 = </quadruped_robot/leg_0_foot>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.49907565)
+            point3f physics:localPos0 = (0, 0, -0.88838124)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "FL_foot" (
+    def Xform "leg_0_foot" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.057803415)
-        float3 physics:diagonalInertia = (0.0009468152, 0.0009468152, 0.0009468152)
-        float physics:mass = 0.70843214
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.064750575)
+        float physics:mass = 1.0730149
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, 0.25008705258369446, -0.8829136490821838)
+        double3 xformOp:translate = (0.6666194200515747, -0.29261744022369385, -1.2253841161727905)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
-            double radius = 0.05780341476202011
+            float3[] extent = [(-0.064750575, -0.064750575, -0.064750575), (0.064750575, 0.064750575, 0.064750575)]
+            double radius = 0.06475057452917099
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -454,9 +484,9 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
+            float3[] extent = [(-0.064750575, -0.064750575, -0.064750575), (0.064750575, 0.064750575, 0.064750575)]
             uniform token purpose = "guide"
-            double radius = 0.05780341476202011
+            double radius = 0.06475057452917099
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -464,23 +494,21 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "FR_hip" (
+    def Xform "leg_1_hip" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.10723816)
-        float3 physics:diagonalInertia = (0.0040363763, 0.0040363763, 0.0040363763)
-        float physics:mass = 0.8774714
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.09692483)
+        float physics:mass = 0.6627178
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, -0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0.6666194200515747, 0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
-            double radius = 0.10723815858364105
+            float3[] extent = [(-0.09692483, -0.09692483, -0.09692483), (0.09692483, 0.09692483, 0.09692483)]
+            double radius = 0.09692482650279999
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -491,16 +519,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
+            float3[] extent = [(-0.09692483, -0.09692483, -0.09692483), (0.09692483, 0.09692483, 0.09692483)]
             uniform token purpose = "guide"
-            double radius = 0.10723815858364105
+            double radius = 0.09692482650279999
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "FR_thigh_joint" (
+        def PhysicsRevoluteJoint "leg_1_thigh_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -509,8 +537,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/FR_hip>
-            rel physics:body1 = </quadruped_robot/FR_thigh>
+            rel physics:body0 = </quadruped_robot/leg_1_hip>
+            rel physics:body1 = </quadruped_robot/leg_1_thigh>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -523,28 +551,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "FR_thigh" (
+    def Xform "leg_1_thigh" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.068484925)
-        float3 physics:diagonalInertia = (0.011353182, 0.011353182, 0.007524259)
-        float physics:mass = 1.3085642
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.003394995)
+        float physics:mass = 0.5003896
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, -0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0.6666194200515747, 0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.10723816, -0.10723816, -0.16130081), (0.10723816, 0.10723816, 0.16130081)]
-            double height = 0.3226016163825989
-            double radius = 0.10723815858364105
+            float3[] extent = [(-0.09692483, -0.09692483, -0.3917841), (0.09692483, 0.09692483, 0.3917841)]
+            double height = 0.7835682034492493
+            double radius = 0.09692482650279999
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16130080819129944)
+            double3 xformOp:translate = (0, 0, -0.39178410172462463)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -553,46 +579,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.10723816, -0.10723816, -0.16130081), (0.10723816, 0.10723816, 0.16130081)]
-            double height = 0.3226016163825989
+            float3[] extent = [(-0.09692483, -0.09692483, -0.3917841), (0.09692483, 0.09692483, 0.3917841)]
+            double height = 0.7835682034492493
             uniform token purpose = "guide"
-            double radius = 0.10723815858364105
+            double radius = 0.09692482650279999
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16130080819129944)
+            double3 xformOp:translate = (0, 0, -0.39178410172462463)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "FR_knee_joint"
+        def PhysicsFixedJoint "leg_1_knee_joint"
         {
-            rel physics:body0 = </quadruped_robot/FR_thigh>
-            rel physics:body1 = </quadruped_robot/FR_knee>
+            rel physics:body0 = </quadruped_robot/leg_1_thigh>
+            rel physics:body1 = </quadruped_robot/leg_1_knee>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.32260162)
+            point3f physics:localPos0 = (0, 0, -0.7835682)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "FR_knee" (
+    def Xform "leg_1_knee" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.10723816)
-        float3 physics:diagonalInertia = (0.007233987, 0.007233987, 0.007233987)
-        float physics:mass = 1.5726029
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.10496869)
+        float physics:mass = 1.448413
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, -0.25008705258369446, -0.3838379979133606)
+        double3 xformOp:translate = (0.6666194200515747, 0.29261744022369385, -0.8477963209152222)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
-            double radius = 0.10723815858364105
+            float3[] extent = [(-0.10496869, -0.10496869, -0.10496869), (0.10496869, 0.10496869, 0.10496869)]
+            double radius = 0.10496868938207626
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -603,16 +627,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.10723816, -0.10723816, -0.10723816), (0.10723816, 0.10723816, 0.10723816)]
+            float3[] extent = [(-0.10496869, -0.10496869, -0.10496869), (0.10496869, 0.10496869, 0.10496869)]
             uniform token purpose = "guide"
-            double radius = 0.10723815858364105
+            double radius = 0.10496868938207626
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "FR_calf_joint" (
+        def PhysicsRevoluteJoint "leg_1_calf_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -621,8 +645,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/FR_knee>
-            rel physics:body1 = </quadruped_robot/FR_calf>
+            rel physics:body0 = </quadruped_robot/leg_1_knee>
+            rel physics:body1 = </quadruped_robot/leg_1_calf>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -635,28 +659,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "FR_calf" (
+    def Xform "leg_1_calf" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.23755215)
-        float3 physics:diagonalInertia = (0.015849885, 0.015849885, 0.0024110328)
-        float physics:mass = 0.7071673
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.45863008)
+        float physics:mass = 1.8149524
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, -0.25008705258369446, -0.3838379979133606)
+        double3 xformOp:translate = (0.6666194200515747, 0.29261744022369385, -0.8477963209152222)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.082576305, -0.082576305, -0.24953783), (0.082576305, 0.082576305, 0.24953783)]
-            double height = 0.49907565116882324
-            double radius = 0.08257630467414856
+            float3[] extent = [(-0.10496869, -0.10496869, -0.24598522), (0.10496869, 0.10496869, 0.24598522)]
+            double height = 0.4919704496860504
+            double radius = 0.10496868938207626
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24953782558441162)
+            double3 xformOp:translate = (0, 0, -0.2459852248430252)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -665,46 +687,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.082576305, -0.082576305, -0.24953783), (0.082576305, 0.082576305, 0.24953783)]
-            double height = 0.49907565116882324
+            float3[] extent = [(-0.10496869, -0.10496869, -0.24598522), (0.10496869, 0.10496869, 0.24598522)]
+            double height = 0.4919704496860504
             uniform token purpose = "guide"
-            double radius = 0.08257630467414856
+            double radius = 0.10496868938207626
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24953782558441162)
+            double3 xformOp:translate = (0, 0, -0.2459852248430252)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "FR_foot_joint"
+        def PhysicsFixedJoint "leg_1_foot_joint"
         {
-            rel physics:body0 = </quadruped_robot/FR_calf>
-            rel physics:body1 = </quadruped_robot/FR_foot>
+            rel physics:body0 = </quadruped_robot/leg_1_calf>
+            rel physics:body1 = </quadruped_robot/leg_1_foot>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.49907565)
+            point3f physics:localPos0 = (0, 0, -0.49197045)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "FR_foot" (
+    def Xform "leg_1_foot" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.057803415)
-        float3 physics:diagonalInertia = (0.0015235823, 0.0015235823, 0.0015235823)
-        float physics:mass = 1.1399845
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.06784738)
+        float physics:mass = 0.945344
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0.5432894229888916, -0.25008705258369446, -0.8829136490821838)
+        double3 xformOp:translate = (0.6666194200515747, 0.29261744022369385, -1.3397667407989502)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
-            double radius = 0.05780341476202011
+            float3[] extent = [(-0.06784738, -0.06784738, -0.06784738), (0.06784738, 0.06784738, 0.06784738)]
+            double radius = 0.06784737855195999
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -715,9 +735,9 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
+            float3[] extent = [(-0.06784738, -0.06784738, -0.06784738), (0.06784738, 0.06784738, 0.06784738)]
             uniform token purpose = "guide"
-            double radius = 0.05780341476202011
+            double radius = 0.06784737855195999
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -725,23 +745,21 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "RL_hip" (
+    def Xform "leg_2_hip" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.108167335)
-        float3 physics:diagonalInertia = (0.006983576, 0.006983576, 0.006983576)
-        float physics:mass = 1.492195
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.10273486)
+        float physics:mass = 1.026541
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, 0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0, -0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
-            double radius = 0.10816733539104462
+            float3[] extent = [(-0.10273486, -0.10273486, -0.10273486), (0.10273486, 0.10273486, 0.10273486)]
+            double radius = 0.10273485630750656
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -752,16 +770,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
+            float3[] extent = [(-0.10273486, -0.10273486, -0.10273486), (0.10273486, 0.10273486, 0.10273486)]
             uniform token purpose = "guide"
-            double radius = 0.10816733539104462
+            double radius = 0.10273485630750656
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "RL_thigh_joint" (
+        def PhysicsRevoluteJoint "leg_2_thigh_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -770,8 +788,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/RL_hip>
-            rel physics:body1 = </quadruped_robot/RL_thigh>
+            rel physics:body0 = </quadruped_robot/leg_2_hip>
+            rel physics:body1 = </quadruped_robot/leg_2_thigh>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -784,28 +802,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "RL_thigh" (
+    def Xform "leg_2_thigh" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.047501236)
-        float3 physics:diagonalInertia = (0.019194935, 0.019194935, 0.011368058)
-        float physics:mass = 1.9432291
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.042485163)
+        float physics:mass = 1.189281
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, 0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0, -0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.108167335, -0.108167335, -0.24330735), (0.108167335, 0.108167335, 0.24330735)]
-            double height = 0.4866147041320801
-            double radius = 0.10816733539104462
+            float3[] extent = [(-0.10273486, -0.10273486, -0.25537908), (0.10273486, 0.10273486, 0.25537908)]
+            double height = 0.5107581615447998
+            double radius = 0.10273485630750656
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24330735206604004)
+            double3 xformOp:translate = (0, 0, -0.2553790807723999)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -814,46 +830,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.108167335, -0.108167335, -0.24330735), (0.108167335, 0.108167335, 0.24330735)]
-            double height = 0.4866147041320801
+            float3[] extent = [(-0.10273486, -0.10273486, -0.25537908), (0.10273486, 0.10273486, 0.25537908)]
+            double height = 0.5107581615447998
             uniform token purpose = "guide"
-            double radius = 0.10816733539104462
+            double radius = 0.10273485630750656
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24330735206604004)
+            double3 xformOp:translate = (0, 0, -0.2553790807723999)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "RL_knee_joint"
+        def PhysicsFixedJoint "leg_2_knee_joint"
         {
-            rel physics:body0 = </quadruped_robot/RL_thigh>
-            rel physics:body1 = </quadruped_robot/RL_knee>
+            rel physics:body0 = </quadruped_robot/leg_2_thigh>
+            rel physics:body1 = </quadruped_robot/leg_2_knee>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.4866147)
+            point3f physics:localPos0 = (0, 0, -0.51075816)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "RL_knee" (
+    def Xform "leg_2_knee" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.108167335)
-        float3 physics:diagonalInertia = (0.007829576, 0.007829576, 0.007829576)
-        float physics:mass = 1.6729617
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.10273486)
+        float physics:mass = 0.60245603
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, 0.25008705258369446, -0.5478510856628418)
+        double3 xformOp:translate = (0, -0.29261744022369385, -0.5749862790107727)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
-            double radius = 0.10816733539104462
+            float3[] extent = [(-0.10273486, -0.10273486, -0.10273486), (0.10273486, 0.10273486, 0.10273486)]
+            double radius = 0.10273485630750656
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -864,16 +878,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
+            float3[] extent = [(-0.10273486, -0.10273486, -0.10273486), (0.10273486, 0.10273486, 0.10273486)]
             uniform token purpose = "guide"
-            double radius = 0.10816733539104462
+            double radius = 0.10273485630750656
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "RL_calf_joint" (
+        def PhysicsRevoluteJoint "leg_2_calf_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -882,8 +896,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/RL_knee>
-            rel physics:body1 = </quadruped_robot/RL_calf>
+            rel physics:body0 = </quadruped_robot/leg_2_knee>
+            rel physics:body1 = </quadruped_robot/leg_2_calf>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -896,28 +910,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "RL_calf" (
+    def Xform "leg_2_calf" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.2443131)
-        float3 physics:diagonalInertia = (0.011317761, 0.011317761, 0.005614247)
-        float physics:mass = 1.3677077
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.44670185)
+        float physics:mass = 1.1140239
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, 0.25008705258369446, -0.5478510856628418)
+        double3 xformOp:translate = (0, -0.29261744022369385, -0.5749862790107727)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.090607494, -0.090607494, -0.16036095), (0.090607494, 0.090607494, 0.16036095)]
-            double height = 0.32072189450263977
-            double radius = 0.09060749411582947
+            float3[] extent = [(-0.08148905, -0.08148905, -0.3326839), (0.08148905, 0.08148905, 0.3326839)]
+            double height = 0.6653677821159363
+            double radius = 0.08148904889822006
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16036094725131989)
+            double3 xformOp:translate = (0, 0, -0.33268389105796814)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -926,46 +938,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.090607494, -0.090607494, -0.16036095), (0.090607494, 0.090607494, 0.16036095)]
-            double height = 0.32072189450263977
+            float3[] extent = [(-0.08148905, -0.08148905, -0.3326839), (0.08148905, 0.08148905, 0.3326839)]
+            double height = 0.6653677821159363
             uniform token purpose = "guide"
-            double radius = 0.09060749411582947
+            double radius = 0.08148904889822006
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16036094725131989)
+            double3 xformOp:translate = (0, 0, -0.33268389105796814)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "RL_foot_joint"
+        def PhysicsFixedJoint "leg_2_foot_joint"
         {
-            rel physics:body0 = </quadruped_robot/RL_calf>
-            rel physics:body1 = </quadruped_robot/RL_foot>
+            rel physics:body0 = </quadruped_robot/leg_2_calf>
+            rel physics:body1 = </quadruped_robot/leg_2_foot>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.3207219)
+            point3f physics:localPos0 = (0, 0, -0.6653678)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "RL_foot" (
+    def Xform "leg_2_foot" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.057803415)
-        float3 physics:diagonalInertia = (0.002658554, 0.002658554, 0.002658554)
-        float physics:mass = 1.9892001
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.05704233)
+        float physics:mass = 0.96661645
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, 0.25008705258369446, -0.8685729503631592)
+        double3 xformOp:translate = (0, -0.29261744022369385, -1.240354061126709)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
-            double radius = 0.05780341476202011
+            float3[] extent = [(-0.05704233, -0.05704233, -0.05704233), (0.05704233, 0.05704233, 0.05704233)]
+            double radius = 0.057042330503463745
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -976,9 +986,9 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
+            float3[] extent = [(-0.05704233, -0.05704233, -0.05704233), (0.05704233, 0.05704233, 0.05704233)]
             uniform token purpose = "guide"
-            double radius = 0.05780341476202011
+            double radius = 0.057042330503463745
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -986,23 +996,21 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "RR_hip" (
+    def Xform "leg_3_hip" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.108167335)
-        float3 physics:diagonalInertia = (0.002819776, 0.002819776, 0.002819776)
-        float physics:mass = 0.60250735
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.088212535)
+        float physics:mass = 1.5284622
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, -0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0, 0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
-            double radius = 0.10816733539104462
+            float3[] extent = [(-0.088212535, -0.088212535, -0.088212535), (0.088212535, 0.088212535, 0.088212535)]
+            double radius = 0.08821253478527069
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -1013,16 +1021,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
+            float3[] extent = [(-0.088212535, -0.088212535, -0.088212535), (0.088212535, 0.088212535, 0.088212535)]
             uniform token purpose = "guide"
-            double radius = 0.10816733539104462
+            double radius = 0.08821253478527069
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "RR_thigh_joint" (
+        def PhysicsRevoluteJoint "leg_3_thigh_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -1031,8 +1039,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/RR_hip>
-            rel physics:body1 = </quadruped_robot/RR_thigh>
+            rel physics:body0 = </quadruped_robot/leg_3_hip>
+            rel physics:body1 = </quadruped_robot/leg_3_thigh>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -1045,28 +1053,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "RR_thigh" (
+    def Xform "leg_3_thigh" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.16561727)
-        float3 physics:diagonalInertia = (0.03666498, 0.03666498, 0.010389123)
-        float physics:mass = 1.7758923
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.5380038)
+        float physics:mass = 1.7962434
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, -0.25008705258369446, -0.06123638525605202)
+        double3 xformOp:translate = (0, 0.29261744022369385, -0.0642281025648117)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.108167335, -0.108167335, -0.24330735), (0.108167335, 0.108167335, 0.24330735)]
-            double height = 0.4866147041320801
-            double radius = 0.10816733539104462
+            float3[] extent = [(-0.088212535, -0.088212535, -0.32506025), (0.088212535, 0.088212535, 0.32506025)]
+            double height = 0.6501204967498779
+            double radius = 0.08821253478527069
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24330735206604004)
+            double3 xformOp:translate = (0, 0, -0.32506024837493896)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -1075,46 +1081,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.108167335, -0.108167335, -0.24330735), (0.108167335, 0.108167335, 0.24330735)]
-            double height = 0.4866147041320801
+            float3[] extent = [(-0.088212535, -0.088212535, -0.32506025), (0.088212535, 0.088212535, 0.32506025)]
+            double height = 0.6501204967498779
             uniform token purpose = "guide"
-            double radius = 0.10816733539104462
+            double radius = 0.08821253478527069
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.24330735206604004)
+            double3 xformOp:translate = (0, 0, -0.32506024837493896)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "RR_knee_joint"
+        def PhysicsFixedJoint "leg_3_knee_joint"
         {
-            rel physics:body0 = </quadruped_robot/RR_thigh>
-            rel physics:body1 = </quadruped_robot/RR_knee>
+            rel physics:body0 = </quadruped_robot/leg_3_thigh>
+            rel physics:body1 = </quadruped_robot/leg_3_knee>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.4866147)
+            point3f physics:localPos0 = (0, 0, -0.6501205)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "RR_knee" (
+    def Xform "leg_3_knee" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.108167335)
-        float3 physics:diagonalInertia = (0.0085782455, 0.0085782455, 0.0085782455)
-        float physics:mass = 1.8329314
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.088965714)
+        float physics:mass = 1.1788999
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, -0.25008705258369446, -0.5478510856628418)
+        double3 xformOp:translate = (0, 0.29261744022369385, -0.7143486142158508)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
-            double radius = 0.10816733539104462
+            float3[] extent = [(-0.088965714, -0.088965714, -0.088965714), (0.088965714, 0.088965714, 0.088965714)]
+            double radius = 0.08896571397781372
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -1125,16 +1129,16 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.108167335, -0.108167335, -0.108167335), (0.108167335, 0.108167335, 0.108167335)]
+            float3[] extent = [(-0.088965714, -0.088965714, -0.088965714), (0.088965714, 0.088965714, 0.088965714)]
             uniform token purpose = "guide"
-            double radius = 0.10816733539104462
+            double radius = 0.08896571397781372
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsRevoluteJoint "RR_calf_joint" (
+        def PhysicsRevoluteJoint "leg_3_calf_joint" (
             apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
         )
         {
@@ -1143,8 +1147,8 @@ def Xform "quadruped_robot"
             float drive:angular:physics:stiffness = 0
             uniform token drive:angular:physics:type = "force"
             uniform token physics:axis = "Y"
-            rel physics:body0 = </quadruped_robot/RR_knee>
-            rel physics:body1 = </quadruped_robot/RR_calf>
+            rel physics:body0 = </quadruped_robot/leg_3_knee>
+            rel physics:body1 = </quadruped_robot/leg_3_calf>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
             point3f physics:localPos0 = (0, 0, 0)
@@ -1157,28 +1161,26 @@ def Xform "quadruped_robot"
         }
     }
 
-    def Xform "RR_calf" (
+    def Xform "leg_3_calf" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, -0.17218195)
-        float3 physics:diagonalInertia = (0.013562644, 0.013562644, 0.0052632038)
-        float physics:mass = 1.2821888
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, -0.20767704)
+        float physics:mass = 1.352939
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, -0.25008705258369446, -0.5478510856628418)
+        double3 xformOp:translate = (0, 0.29261744022369385, -0.7143486142158508)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Cylinder "visuals"
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.090607494, -0.090607494, -0.16036095), (0.090607494, 0.090607494, 0.16036095)]
-            double height = 0.32072189450263977
-            double radius = 0.09060749411582947
+            float3[] extent = [(-0.088965714, -0.088965714, -0.20959474), (0.088965714, 0.088965714, 0.20959474)]
+            double height = 0.4191894829273224
+            double radius = 0.08896571397781372
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16036094725131989)
+            double3 xformOp:translate = (0, 0, -0.2095947414636612)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
@@ -1187,46 +1189,44 @@ def Xform "quadruped_robot"
         )
         {
             uniform token axis = "Z"
-            float3[] extent = [(-0.090607494, -0.090607494, -0.16036095), (0.090607494, 0.090607494, 0.16036095)]
-            double height = 0.32072189450263977
+            float3[] extent = [(-0.088965714, -0.088965714, -0.20959474), (0.088965714, 0.088965714, 0.20959474)]
+            double height = 0.4191894829273224
             uniform token purpose = "guide"
-            double radius = 0.09060749411582947
+            double radius = 0.08896571397781372
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
-            double3 xformOp:translate = (0, 0, -0.16036094725131989)
+            double3 xformOp:translate = (0, 0, -0.2095947414636612)
             uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
         }
 
-        def PhysicsFixedJoint "RR_foot_joint"
+        def PhysicsFixedJoint "leg_3_foot_joint"
         {
-            rel physics:body0 = </quadruped_robot/RR_calf>
-            rel physics:body1 = </quadruped_robot/RR_foot>
+            rel physics:body0 = </quadruped_robot/leg_3_calf>
+            rel physics:body1 = </quadruped_robot/leg_3_foot>
             float physics:breakForce = 3.4028235e38
             float physics:breakTorque = 3.4028235e38
-            point3f physics:localPos0 = (0, 0, -0.3207219)
+            point3f physics:localPos0 = (0, 0, -0.41918948)
             point3f physics:localPos1 = (0, 0, 0)
             quatf physics:localRot0 = (1, 0, 0, 0)
             quatf physics:localRot1 = (1, 0, 0, 0)
         }
     }
 
-    def Xform "RR_foot" (
+    def Xform "leg_3_foot" (
         apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
     )
     {
-        point3f physics:centerOfMass = (0, 0, 0.057803415)
-        float3 physics:diagonalInertia = (0.0022634626, 0.0022634626, 0.0022634626)
-        float physics:mass = 1.6935825
-        quatf physics:principalAxes = (1, 0, 0, 0)
+        point3f physics:centerOfMass = (0, 0, 0.061748773)
+        float physics:mass = 1.6929519
         quatd xformOp:orient = (1, 0, 0, 0)
         double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-0.5432894229888916, -0.25008705258369446, -0.8685729503631592)
+        double3 xformOp:translate = (0, 0.29261744022369385, -1.1335381269454956)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
 
         def Sphere "visuals"
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
-            double radius = 0.05780341476202011
+            float3[] extent = [(-0.061748773, -0.061748773, -0.061748773), (0.061748773, 0.061748773, 0.061748773)]
+            double radius = 0.061748772859573364
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)
@@ -1237,9 +1237,511 @@ def Xform "quadruped_robot"
             apiSchemas = ["PhysicsCollisionAPI"]
         )
         {
-            float3[] extent = [(-0.057803415, -0.057803415, -0.057803415), (0.057803415, 0.057803415, 0.057803415)]
+            float3[] extent = [(-0.061748773, -0.061748773, -0.061748773), (0.061748773, 0.061748773, 0.061748773)]
             uniform token purpose = "guide"
-            double radius = 0.05780341476202011
+            double radius = 0.061748772859573364
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def Xform "leg_4_hip" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, 0.103987426)
+        float physics:mass = 0.881989
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, -0.29261744022369385, -0.0642281025648117)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Sphere "visuals"
+        {
+            float3[] extent = [(-0.103987426, -0.103987426, -0.103987426), (0.103987426, 0.103987426, 0.103987426)]
+            double radius = 0.1039874255657196
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Sphere "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.103987426, -0.103987426, -0.103987426), (0.103987426, 0.103987426, 0.103987426)]
+            uniform token purpose = "guide"
+            double radius = 0.1039874255657196
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "leg_4_thigh_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 60
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </quadruped_robot/leg_4_hip>
+            rel physics:body1 = </quadruped_robot/leg_4_thigh>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 3002.2988
+        }
+    }
+
+    def Xform "leg_4_thigh" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, -0.1771182)
+        float physics:mass = 1.1372453
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, -0.29261744022369385, -0.0642281025648117)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cylinder "visuals"
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.103987426, -0.103987426, -0.27855006), (0.103987426, 0.103987426, 0.27855006)]
+            double height = 0.5571001172065735
+            double radius = 0.1039874255657196
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.27855005860328674)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Cylinder "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.103987426, -0.103987426, -0.27855006), (0.103987426, 0.103987426, 0.27855006)]
+            double height = 0.5571001172065735
+            uniform token purpose = "guide"
+            double radius = 0.1039874255657196
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.27855005860328674)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsFixedJoint "leg_4_knee_joint"
+        {
+            rel physics:body0 = </quadruped_robot/leg_4_thigh>
+            rel physics:body1 = </quadruped_robot/leg_4_knee>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.5571001)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    def Xform "leg_4_knee" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, 0.103987426)
+        float physics:mass = 0.9713385
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, -0.29261744022369385, -0.6213282346725464)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Sphere "visuals"
+        {
+            float3[] extent = [(-0.103987426, -0.103987426, -0.103987426), (0.103987426, 0.103987426, 0.103987426)]
+            double radius = 0.1039874255657196
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Sphere "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.103987426, -0.103987426, -0.103987426), (0.103987426, 0.103987426, 0.103987426)]
+            uniform token purpose = "guide"
+            double radius = 0.1039874255657196
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "leg_4_calf_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 60
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </quadruped_robot/leg_4_knee>
+            rel physics:body1 = </quadruped_robot/leg_4_calf>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 3002.2988
+        }
+    }
+
+    def Xform "leg_4_calf" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, -0.29486498)
+        float physics:mass = 1.7593532
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, -0.29261744022369385, -0.6213282346725464)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cylinder "visuals"
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.08271486, -0.08271486, -0.3377971), (0.08271486, 0.08271486, 0.3377971)]
+            double height = 0.6755942106246948
+            double radius = 0.08271486312150955
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.3377971053123474)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Cylinder "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.08271486, -0.08271486, -0.3377971), (0.08271486, 0.08271486, 0.3377971)]
+            double height = 0.6755942106246948
+            uniform token purpose = "guide"
+            double radius = 0.08271486312150955
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.3377971053123474)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsFixedJoint "leg_4_foot_joint"
+        {
+            rel physics:body0 = </quadruped_robot/leg_4_calf>
+            rel physics:body1 = </quadruped_robot/leg_4_foot>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.6755942)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    def Xform "leg_4_foot" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, 0.057900403)
+        float physics:mass = 0.7503913
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, -0.29261744022369385, -1.2969224452972412)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Sphere "visuals"
+        {
+            float3[] extent = [(-0.057900403, -0.057900403, -0.057900403), (0.057900403, 0.057900403, 0.057900403)]
+            double radius = 0.05790040269494057
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Sphere "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.057900403, -0.057900403, -0.057900403), (0.057900403, 0.057900403, 0.057900403)]
+            uniform token purpose = "guide"
+            double radius = 0.05790040269494057
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    def Xform "leg_5_hip" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, 0.09935396)
+        float physics:mass = 1.7665648
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, 0.29261744022369385, -0.0642281025648117)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Sphere "visuals"
+        {
+            float3[] extent = [(-0.09935396, -0.09935396, -0.09935396), (0.09935396, 0.09935396, 0.09935396)]
+            double radius = 0.09935396164655685
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Sphere "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.09935396, -0.09935396, -0.09935396), (0.09935396, 0.09935396, 0.09935396)]
+            uniform token purpose = "guide"
+            double radius = 0.09935396164655685
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "leg_5_thigh_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 60
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </quadruped_robot/leg_5_hip>
+            rel physics:body1 = </quadruped_robot/leg_5_thigh>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 3002.2988
+        }
+    }
+
+    def Xform "leg_5_thigh" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, -0.46222147)
+        float physics:mass = 1.0660503
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, 0.29261744022369385, -0.0642281025648117)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cylinder "visuals"
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.09935396, -0.09935396, -0.36453265), (0.09935396, 0.09935396, 0.36453265)]
+            double height = 0.7290652990341187
+            double radius = 0.09935396164655685
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.3645326495170593)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Cylinder "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.09935396, -0.09935396, -0.36453265), (0.09935396, 0.09935396, 0.36453265)]
+            double height = 0.7290652990341187
+            uniform token purpose = "guide"
+            double radius = 0.09935396164655685
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.3645326495170593)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsFixedJoint "leg_5_knee_joint"
+        {
+            rel physics:body0 = </quadruped_robot/leg_5_thigh>
+            rel physics:body1 = </quadruped_robot/leg_5_knee>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.7290653)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    def Xform "leg_5_knee" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, 0.10958334)
+        float physics:mass = 1.2675414
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, 0.29261744022369385, -0.7932934165000916)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Sphere "visuals"
+        {
+            float3[] extent = [(-0.10958334, -0.10958334, -0.10958334), (0.10958334, 0.10958334, 0.10958334)]
+            double radius = 0.10958334058523178
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Sphere "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.10958334, -0.10958334, -0.10958334), (0.10958334, 0.10958334, 0.10958334)]
+            uniform token purpose = "guide"
+            double radius = 0.10958334058523178
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsRevoluteJoint "leg_5_calf_joint" (
+            apiSchemas = ["PhysxJointAPI", "PhysicsJointStateAPI:angular", "PhysicsDriveAPI:angular"]
+        )
+        {
+            float drive:angular:physics:damping = 0
+            float drive:angular:physics:maxForce = 60
+            float drive:angular:physics:stiffness = 0
+            uniform token drive:angular:physics:type = "force"
+            uniform token physics:axis = "Y"
+            rel physics:body0 = </quadruped_robot/leg_5_knee>
+            rel physics:body1 = </quadruped_robot/leg_5_calf>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+            float physics:lowerLimit = -180
+            float physics:upperLimit = 180
+            float physxJoint:maxJointVelocity = 3002.2988
+        }
+    }
+
+    def Xform "leg_5_calf" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, -0.41964594)
+        float physics:mass = 0.94339913
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, 0.29261744022369385, -0.7932934165000916)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Cylinder "visuals"
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.10958334, -0.10958334, -0.2932396), (0.10958334, 0.10958334, 0.2932396)]
+            double height = 0.5864791870117188
+            double radius = 0.10958334058523178
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.2932395935058594)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Cylinder "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            uniform token axis = "Z"
+            float3[] extent = [(-0.10958334, -0.10958334, -0.2932396), (0.10958334, 0.10958334, 0.2932396)]
+            double height = 0.5864791870117188
+            uniform token purpose = "guide"
+            double radius = 0.10958334058523178
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, -0.2932395935058594)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def PhysicsFixedJoint "leg_5_foot_joint"
+        {
+            rel physics:body0 = </quadruped_robot/leg_5_calf>
+            rel physics:body1 = </quadruped_robot/leg_5_foot>
+            float physics:breakForce = 3.4028235e38
+            float physics:breakTorque = 3.4028235e38
+            point3f physics:localPos0 = (0, 0, -0.5864792)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+
+    def Xform "leg_5_foot" (
+        apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        point3f physics:centerOfMass = (0, 0, 0.06954777)
+        float physics:mass = 1.7964413
+        quatd xformOp:orient = (1, 0, 0, 0)
+        double3 xformOp:scale = (1, 1, 1)
+        double3 xformOp:translate = (-0.6666194200515747, 0.29261744022369385, -1.379772663116455)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+
+        def Sphere "visuals"
+        {
+            float3[] extent = [(-0.06954777, -0.06954777, -0.06954777), (0.06954777, 0.06954777, 0.06954777)]
+            double radius = 0.06954777240753174
+            quatd xformOp:orient = (1, 0, 0, 0)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+
+        def Sphere "collisions" (
+            apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            float3[] extent = [(-0.06954777, -0.06954777, -0.06954777), (0.06954777, 0.06954777, 0.06954777)]
+            uniform token purpose = "guide"
+            double radius = 0.06954777240753174
             quatd xformOp:orient = (1, 0, 0, 0)
             double3 xformOp:scale = (1, 1, 1)
             double3 xformOp:translate = (0, 0, 0)

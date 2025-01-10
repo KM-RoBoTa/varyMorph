@@ -30,17 +30,16 @@ class HelloWorld(BaseSample):
         import_config = _urdf.ImportConfig()
         import_config.merge_fixed_joints = False
         import_config.convex_decomp = False
-        import_config.import_inertia_tensor = True
+        import_config.import_inertia_tensor = False
         import_config.fix_base = True
         import_config.make_default_prim = True
         import_config.self_collision = False
         import_config.create_physics_scene = True
         import_config.import_inertia_tensor = False
-        import_config.default_drive_strength = 1047.19751
-        import_config.default_position_drive_damping = 52.35988
+        import_config.default_drive_strength = 0
+        import_config.default_position_drive_damping = 0
         import_config.default_drive_type = _urdf.UrdfJointTargetType.JOINT_DRIVE_POSITION
         import_config.distance_scale = 1
-        import_config.density = 0.0
 
         # Define the specific URDF file path and the desired USDA file path
         urdf_file_path = "/home/gpuuser/GitHub/Eureka/isaacgymenvs/assets/urdf/anymal_c/urdf/anymal.urdf"

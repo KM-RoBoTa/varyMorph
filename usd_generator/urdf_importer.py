@@ -60,8 +60,8 @@ class HelloWorld:
                     usd_dir=os.path.dirname(dest_path),
                     usd_file_name=os.path.basename(dest_path),
                     fix_base=False,
-                    merge_fixed_joints=False,
-                    import_inertia_tensor=True,
+                    merge_fixed_joints=True,
+                    import_inertia_tensor=False,
                     self_collision=True,
                     force_usd_conversion=True,
                     make_instanceable=False,
@@ -81,8 +81,7 @@ class HelloWorld:
         gen_elapsed_time = gen_end_time - gen_start_time
         print(f"Total time taken for conversions for generation {generation}: {gen_elapsed_time:.2f} seconds")
 
-        if generation == config.NUM_GENERATIONS:
-            simulation_app.close()
+        simulation_app.close()
 
 
 if __name__ == "__main__":
