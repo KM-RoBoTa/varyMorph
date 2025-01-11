@@ -1,12 +1,5 @@
-## Description of the Evolutionary Algorithm
-In this project, the evolutionary algorithm is used to optimize quadruped parameters. By simulating the principles of natural selection, mutation, and competition, it evolves a population of robots over successive generations, refining their structures based on defined fitness criteria.
-
-**Features**
-- Population Management: Handles a dynamic population of robots, tracking their fitness and facilitating generational evolution.
-- Mutation Operations: Implements some potential mutation strategies, including mass, size, and joint parameter mutations to introduce variability.
-- Selection Strategy: Utilizes tournament selection to choose the fittest robots for reproduction, ensuring the propagation of superior traits.
-- Elitism: Preserves a fraction of the top-performing robots in each generation to maintain high-quality individuals.
-- Configurable Parameters: Adjustable mutation rates, elite fractions, tournament sizes, and mutation ranges through a configuration file.
+## varyMorph, a Tool to Automatically Generate Legged Robot Morphologies.
+Designing efficient and robust legged robots for navigating diverse terrains is a central challenge in robotics research. To simplify this process, we introduce varyMorph, an open-source tool capable of programmatically generating a wide variety of legged robot models in both URDF and USDA formats. By randomizing attributes such as the number of legs, morphology, body dimensions, and mass distribution, varyMorph can produce hundreds or even thousands of valid robot designs within minutes. These models are easily compatible with popular simulators like Isaac Sim/Lab, MuJoCo, Isaac Gym, and RaiSim, enabling large-scale experimentation in areas such as evolutionary robotics and reinforcement learning. Our findings demonstrate near-linear scalability in terms of model complexity and batch size, with fast generation achievable on both high-performance and standard desktop hardware. This high-throughput approach to morphological exploration supports data-driven optimization and opens avenues for innovative research in locomotion control, sim-to-real transfer, and co-evolutionary algorithms. We position varyMorph as a complementary tool to grammar-based, latent-space, and gradient-driven design methodologies, lowering the barriers to discovering novel and resilient robot morphologies.
 
 ## Walkthrough: How to Execute the Conversion Process
 
