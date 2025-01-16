@@ -33,6 +33,10 @@ Designing efficient and robust legged robots for navigating diverse terrains is 
 
 
 ## Explaining the config file
+- The directory of the config file exists at the following path:
+     ```bash
+     cd morphGen
+     ```
 The `config.py` file defines key parameters for generating robotic morphologies.
 
 - `FILE_TYPE`: Specifies the output format, either `"URDF"` or `"USD"`.
