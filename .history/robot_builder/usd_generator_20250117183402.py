@@ -30,6 +30,9 @@ class URDFtoUSD:
         relative_path = f"generations/generation_{generation}"
         main_directory = os.path.join(os.getcwd(), relative_path)
 
+        # Start timing for the total conversion process
+        gen_start_time = time.time()
+
         # Collect all URDF files that need to be processed
         urdf_files = []
         for root, dirs, files in os.walk(main_directory):
@@ -37,7 +40,9 @@ class URDFtoUSD:
                 if file_name.endswith(".urdf"):
                     urdf_files.append(os.path.join(root, file_name))
 
-        gen_start_time = time.time()
+        num_robots_processed = []
+        elapsed_times = []
+        start_time = time.time()
 
         with tqdm(total=len(urdf_files), desc="Converting URDF files to USDA", dynamic_ncols=True) as pbar:
             for i, urdf_file_path in enumerate(urdf_files, start=1):
@@ -74,9 +79,45 @@ class URDFtoUSD:
                 # Update progress bar after processing each file
                 pbar.update(1)
 
+                # -- Timing data collection --------------------------------
+                # If you only want to record every 50 robots, do:
+                if i % 50 == 0:
+                    current_time = time.time() - start_time  # elapsed seconds
+                    num_robots_processed.append(i)          # e.g. how many done so far
+                    elapsed_times.append(current_time)
+                # ----------------------------------------------------------
+
+        # Optionally, record final time if not a multiple of 50:
+        if len(urdf_files) % 50 != 0:
+            current_time = time.time() - start_time
+            num_robots_processed.append(len(urdf_files))
+            elapsed_times.append(current_time)
+
         # End timing for the total conversion process
         gen_end_time = time.time()
         gen_elapsed_time = gen_end_time - gen_start_time
         print(f"Total time taken for conversions six legged for generation {generation}: {gen_elapsed_time:.2f} seconds")
+
+        # fig = px.line(
+        #     x=num_robots_processed,
+        #     y=elapsed_times,
+        #     markers=True,
+        #     title="Number of Robots Processed vs. Elapsed Time"
+        # )
+        # fig.update_layout(
+        #     xaxis_title="Number of Robots Processed",
+        #     yaxis_title="Elapsed Time (seconds)"
+        # )
+
+        # # Save plot as an HTML file in the same directory
+        # output_file = "plot.html"
+        # fig.write_html(output_file)
+        # print(f"Plot saved to {output_file}")
+
+        # data = {"Number of Robots Processed": num_robots_processed, "Elapsed Time (seconds)": elapsed_times}
+        # df = pd.DataFrame(data)
+        # csv_filename = "plot_data_config_2_legged_comp.csv"
+        # df.to_csv(csv_filename, index=False)
+        # print(f"Plot data saved to {csv_filename}")
 
         simulation_app.close()

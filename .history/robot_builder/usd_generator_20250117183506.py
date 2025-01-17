@@ -37,7 +37,9 @@ class URDFtoUSD:
                 if file_name.endswith(".urdf"):
                     urdf_files.append(os.path.join(root, file_name))
 
-        gen_start_time = time.time()
+        num_robots_processed = []
+        elapsed_times = []
+        start_time = time.time()
 
         with tqdm(total=len(urdf_files), desc="Converting URDF files to USDA", dynamic_ncols=True) as pbar:
             for i, urdf_file_path in enumerate(urdf_files, start=1):

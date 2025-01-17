@@ -25,7 +25,7 @@ class URDFtoUSD:
     def __init__(self) -> None:
         pass
 
-    def setup_conversion(self, generation):
+    def setup_conversion(self):
         # Define the relative path from the current working directory or script's location
         relative_path = f"generations/generation_{generation}"
         main_directory = os.path.join(os.getcwd(), relative_path)
