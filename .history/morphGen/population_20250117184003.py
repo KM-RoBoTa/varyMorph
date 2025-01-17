@@ -6,11 +6,12 @@ import shutil
 
    
 class Population:
-    def __init__(self, size, output_dir='generations'):
+    def __init__(self, size, ¨output_dir='../generations'):
         self.size = size
         self.robots = {}
         self.output_dir = output_dir
         os.makedirs(self.output_dir, exist_ok=True)
+        self.decision_var = decision_var
 
         # If the output directory exists, delete all subdirectories inside it
         if os.path.exists(self.output_dir):

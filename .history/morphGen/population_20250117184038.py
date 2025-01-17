@@ -6,7 +6,7 @@ import shutil
 
    
 class Population:
-    def __init__(self, size, output_dir='generations'):
+    def __init__(self, size, output_dir='morphGen/generations'):
         self.size = size
         self.robots = {}
         self.output_dir = output_dir
