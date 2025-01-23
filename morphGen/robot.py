@@ -130,8 +130,8 @@ class Robot:
                 axis=[0, 0, 0]
             )
 
-        self.initialize_fixed_morphology_mass()
         self.initialize_fixed_morphology_size()
+        self.initialize_fixed_morphology_mass()
 
         # Create the links' properties
         self.create_links()
@@ -335,9 +335,9 @@ class Robot:
 
         return leg_dims
 
-    def initialize_fixed_morphology_mass(self):  
+    def initialize_fixed_morphology_mass(self):
         for i in range(len(self.links)): 
-            self.links[i].set_params(mass=np.random.uniform(config.MASS_RANGE[0], config.MASS_RANGE[1]))
+            self.links[i].params['rho']=np.random.uniform(config.RHO_RANGE[0], config.RHO_RANGE[1])
 
     def initialize_fixed_morphology_com(self):
         if config.MASS_DISTRIBUTION == "uniform":

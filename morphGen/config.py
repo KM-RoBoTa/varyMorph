@@ -22,9 +22,10 @@ SIZE_RANGE_HEIGHT = RES_FACTOR * [0.15, 0.3]
 
 # Size ranges for the Legs
 HEIGHT_RANGE = RES_FACTOR * [0.25, 0.9]
-MASS_RANGE = [(0.5 * RES_FACTOR ** 3), (2 * RES_FACTOR ** 3)]  # Scaled by RES_FACTOR³
 RADIUS_RANGE = RES_FACTOR * [0.08, 0.11]
 
+# Density range for the links
+RHO_RANGE = RES_FACTOR * [0.5, 2]
 
 # Range for the center of mass (COM) relative positioning within a link.
 # - "uniform": center of mass is in middle of link.
